@@ -1,5 +1,5 @@
 import pets_db as pets_db
-from question4 import sql_pets_owned_by_nobody, sql_only_owned_by_bessie, sql_pets_older_than_owner
+from question4 import sql_pets_owned_by_nobody, sql_pets_older_than_owner, sql_only_owned_by_bessie
 
 def test_question4_pets_older_than_owner():
   pets_db.create_db()
@@ -32,6 +32,10 @@ def test_question4_only_owned_by_bessie():
     rows = res.fetchall()
 
   rows.sort()
+
+  print(len(rows))
+  if len(rows) > 0: 
+    print("El resultado si es mayor a 0!")
 
   assert len(rows) == 2
   assert rows[0] == ('bessie', 'leyla', 'gray whale')
