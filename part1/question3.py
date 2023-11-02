@@ -26,9 +26,7 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
-def make_oven():
-  newOven = Oven()
-  return newOven
+
 
 class Oven:
 
@@ -54,6 +52,10 @@ class Oven:
       return "snow"
     elif self.items == self.opt03 and temperature == 150:
       return "pizza"
+    
+def make_oven():
+  newOven = Oven()
+  return newOven
     
 
 def alchemy_combine(oven, ingredients, temperature):

@@ -13,27 +13,19 @@
 # need to be fixed. The test suite in `question1_test.py` will verify the output.
 # Read the test suite to know the values that these functions should return.
 
+city_options = {
+   "Quito": {"temperature": 22, "weather": "sunny"},
+   "Sao Paulo": {"temperature": 17, "weather": "cloudy"},
+   "San Francisco": {"temperature": 16, "weather": "partly cloudy"},
+   "New York": {"temperature": 14, "weather": "rainy"}
+}
+
 def get_city_temperature(city):
-   if city == "Quito":
-      return 22
-   if city == "Sao Paulo":
-      return 17
-   if city == "San Francisco":
-      return 16
-   if city == "New York":
-      return 14
+
+   resp = city_options.get(city)
+   return resp["temperature"]
 
 def get_city_weather(city):
 
-  sky_condition = None
-
-  if city == "Sao Paulo":
-     sky_condition = "cloudy"
-  elif city == "New York":
-     sky_condition = "rainy"
-  elif city == "Quito":
-     sky_condition = "sunny"
-
-  temperature = get_city_temperature(city)
-
-  return str(temperature) + " degrees and " + sky_condition
+  resp = city_options.get(city)
+  return str(resp["temperature"]) + " degrees and " + resp["weather"]

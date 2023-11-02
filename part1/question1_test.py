@@ -5,3 +5,9 @@ def test_get_city_weather():
   assert get_city_weather("Quito") == "22 degrees and sunny"
 
   assert get_city_weather("New York") == "14 degrees and rainy"
+
+  assert get_city_weather("San Francisco") == "16 degrees and partly cloudy"
+
+  assert get_city_weather("Sao Paulo") == "17 degrees and cloudy"
+
+  
